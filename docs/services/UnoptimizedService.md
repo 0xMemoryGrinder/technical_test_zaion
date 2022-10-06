@@ -18,11 +18,11 @@ The input can be visualized as a 2 dimensions array. The first dimension is the 
 [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 //can be visualized as
 [
-  [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0],
-  [0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+  [., ., ., ., ., ., ., X, ., ., ., .],
+  [., ., ., X, ., ., ., X, X, ., X, .],
+  [., X, ., X, X, ., X, X, X, X, X, X],
 ]
-// where 1 = building and 0 = empty space
+// where X = building and . = empty space
 ```
 The service computes for each "cell" (starting by the second column of buildings) if there is a solid "cell" (a building) on left to know if the water can be retained.  
 If there is no solid "cell" on the immediate left, the service looks further to the left to find a solid "cell" before the left end of the array.  
