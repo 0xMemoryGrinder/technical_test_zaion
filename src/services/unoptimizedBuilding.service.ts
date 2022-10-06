@@ -66,7 +66,7 @@ export class UnoptimizedBuildingService extends BuildingService {
 
         let sum = 0;
 
-        for (let height = 1; height < this._maxBuildingHeight; height++) {
+        for (let height = 1; height <= this._maxBuildingHeight; height++) {
             for (let buildingIdx = 1; buildingIdx < this._buildingsHeightList.length; buildingIdx++) {
                 if (!this._isCellBuilding(height, buildingIdx) && this._determineCell(height, buildingIdx))
                     sum++;

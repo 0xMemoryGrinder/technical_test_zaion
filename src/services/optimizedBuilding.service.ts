@@ -20,6 +20,7 @@ export class OptimizedBuildingService extends BuildingService {
      */
     private _determineRow(height: number): number {
         let nbRetainedCells = 0;
+        let possibleRainSurface = 0;
         let isRetaining = false;
         let isBuilding : boolean;
 
@@ -27,8 +28,11 @@ export class OptimizedBuildingService extends BuildingService {
             isBuilding = this._isCellBuilding(height, buildingIdx);
             if (isBuilding && !isRetaining) {
                 isRetaining = true;
-            } else if (!isBuilding && isRetaining) {
-                nbRetainedCells++;
+            } else if (isBuilding && isRetaining) {
+                nbRetainedCells += possibleRainSurface;
+                possibleRainSurface = 0;
+            } else if (isRetaining) {
+                possibleRainSurface++;
             }
         }
         return nbRetainedCells;
@@ -44,7 +48,7 @@ export class OptimizedBuildingService extends BuildingService {
 
         let sum = 0;
 
-        for (let height = 1; height < this._maxBuildingHeight; height++)
+        for (let height = 1; height <= this._maxBuildingHeight; height++)
             sum += this._determineRow(height);
         return sum;
     }
