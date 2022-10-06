@@ -14,7 +14,7 @@ This service returns a non-negative integer representing the surface where water
 ## Operation principal
 
 The input can be visualized as a 2 dimensions array. The first dimension is the height of the building, the second dimension is the position of the building.  
-```json
+```javascript
 [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 //can be visualized as
 [
@@ -32,7 +32,7 @@ The empty cells are ignored until the first solid "cell" is encountered. Then ea
 At each solid cell encountered (except the first) the temporary variable is added to the total variable and reset to 0.
 
 Here is an example of the algorithm in action on a row:
-```json
+```text
 --- step 1 (empty ignored) ---
 total = 0
 potentialCount = 0
