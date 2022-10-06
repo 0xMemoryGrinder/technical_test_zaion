@@ -13,6 +13,11 @@ export class OptimizedBuildingService extends BuildingService {
         super(buildingsHeightList);
     }
 
+    /**
+     * @description - This method is used to determine the rain surface of a row
+     * @param height - The height of the row (pseudo y-axis)
+     * @private
+     */
     private _determineRow(height: number): number {
         let nbRetainedCells = 0;
         let isRetaining = false;
@@ -39,9 +44,8 @@ export class OptimizedBuildingService extends BuildingService {
 
         let sum = 0;
 
-        for (let height = 1; height < this._maxBuildingHeight; height++) {
+        for (let height = 1; height < this._maxBuildingHeight; height++)
             sum += this._determineRow(height);
-        }
         return sum;
     }
 }
