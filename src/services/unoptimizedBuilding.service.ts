@@ -85,7 +85,7 @@ export class UnoptimizedBuildingService {
         if (this._verifyTooSmall())
             return 0;
 
-        let sum : number = 0;
+        let sum = 0;
 
         for (let height = 1; height < this._maxBuildingHeight; height++) {
             for (let buildingIdx = 1; buildingIdx < this._buildingsHeightList.length; buildingIdx++) {
