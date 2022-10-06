@@ -1,37 +1,16 @@
+import { BuildingService } from "./building.service";
+
 /**
  * @class UnoptimizedBuildingService - This class is used to calculate the rain surface of a list of buildings in an unoptimized way
  */
-export class UnoptimizedBuildingService {
-    private readonly _buildingsHeightList: number[];
-    private readonly _maxBuildingHeight: number;
+export class UnoptimizedBuildingService extends BuildingService {
 
     /**
      * @description - This method is used to initialize the class
      * @param buildingsHeightList - The list of buildings heights inf a form of an 1D-array
      */
     constructor(buildingsHeightList: number[]) {
-        this._buildingsHeightList = buildingsHeightList;
-        this._maxBuildingHeight = Math.max(...buildingsHeightList);
-    }
-
-    /**
-     * @description - This method is used to verify if the number of buildings is too small to contain any rain surface
-     * @returns {boolean} - true if the number of buildings is too small, false otherwise
-     * @private
-     */
-    private _verifyTooSmall(): boolean {
-        return this._buildingsHeightList.length <= 2;
-    }
-
-    /**
-     * @description - This method is used to verify if a cell is a building
-     * @param height - The height of the cell (pseudo y-axis)
-     * @param cellIndex - The index of the cell (pseudo x-axis)
-     * @returns {boolean} - true if the cell is a building, false if the cell is empty
-     * @private
-     */
-    private _isCellBuilding(height: number, cellIndex: number): boolean {
-        return height <= this._buildingsHeightList[cellIndex];
+        super(buildingsHeightList);
     }
 
     /**
