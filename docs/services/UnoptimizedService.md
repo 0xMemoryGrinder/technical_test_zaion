@@ -14,7 +14,7 @@ This service returns a non-negative integer representing the surface where water
 ## Operation principal
 
 The input can be visualized as a 2 dimensions array. The first dimension is the height of the building, the second dimension is the position of the building.  
-```json
+```javascript
 [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 //can be visualized as
 [
@@ -34,5 +34,6 @@ The service sums up all the cells where water can be retained and returns it.
 ## Complexity
 
 The base complexity of this algorithm is `O(np)` where `n` is the number of elements in the list and `p` the maximum height.  
-Then adds up the complexity of the methods `_verifyLeftCells` and `_verifyRightCells` which is `O(i)` where `i` is the x-axis index of the checked cell.  
+Then adds up the complexity of the method `_verifyLeftCells` which is `O(i)` where `i` is the x-axis index of the checked cell.  
+Finally adds up the complexity of the method `_verifyRightCells` which is `O(n-i)` where `n` is the number of elements in the list `i` is the x-axis index of the checked cell.
 The "second" complexity is bound to the "distance" between the current "cell" and the left (and right) first solid "cell" since the algorithm looks further until finding one.
