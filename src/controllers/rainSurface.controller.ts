@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
+import { UnoptimizedBuildingService } from "../services/unoptimizedBuilding.service";
 
 const unoptimized = (req: Request, res: Response) => {
+    const { buildingsHeightList } = req.body;
+    const unoptimizedBuildingService = new UnoptimizedBuildingService(buildingsHeightList);
+
     res.json({
-        message: "unoptimized not implemented yet"
+        rainSurface: unoptimizedBuildingService.getRainSurface()
     })
 };
 
