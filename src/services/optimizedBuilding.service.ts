@@ -48,7 +48,7 @@ export class OptimizedBuildingService extends BuildingService {
 
         let sum = 0;
 
-        for (let height = 1; height < this._maxBuildingHeight; height++)
+        for (let height = 1; height <= this._maxBuildingHeight; height++)
             sum += this._determineRow(height);
         return sum;
     }
