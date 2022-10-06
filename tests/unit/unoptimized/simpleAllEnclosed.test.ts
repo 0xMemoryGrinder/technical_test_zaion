@@ -2,8 +2,8 @@ import { UnoptimizedBuildingService } from "../../../src/services/unoptimizedBui
 
 describe("UnoptimizedBuildingService", () => {
     it("should return 9", () => {
-        const optimizedBuildingService = new UnoptimizedBuildingService([3, 0, 0, 0, 3]);
-        const result = optimizedBuildingService.getRainSurface();
+        const unoptimizedBuildingService = new UnoptimizedBuildingService([3, 0, 0, 0, 3]);
+        const result = unoptimizedBuildingService.getRainSurface();
         expect(result).toBe(9);
     });
 });
