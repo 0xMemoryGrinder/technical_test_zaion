@@ -37,3 +37,5 @@ The base complexity of this algorithm is `O(np)` where `n` is the number of elem
 Then adds up the complexity of the method `_verifyLeftCells` which is `O(i)` where `i` is the x-axis index of the checked cell.  
 Finally adds up the complexity of the method `_verifyRightCells` which is `O(n-i)` where `n` is the number of elements in the list `i` is the x-axis index of the checked cell.
 The "second" complexity is bound to the "distance" between the current "cell" and the left (and right) first solid "cell" since the algorithm looks further until finding one.
+
+Thus, the worst case complexity of this algorithm is `O(np(n-1))` where `n` is the number of elements in the list and `p` the maximum height.
