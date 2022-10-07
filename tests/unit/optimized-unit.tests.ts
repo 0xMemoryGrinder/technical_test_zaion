@@ -15,6 +15,12 @@ describe("Unit-tests", () => {
             expect(result).toBe(0);
         });
 
+        it("should return 0 with all building", () => {
+            const unoptimizedBuildingService = new OptimizedBuildingService([10, 10, 10, 10, 10]);
+            const result = unoptimizedBuildingService.getRainSurface();
+            expect(result).toBe(0);
+        });
+
         it("should return 9 with simple enclosed", () => {
             const optimizedBuildingService = new OptimizedBuildingService([3, 0, 0, 0, 3]);
             const result = optimizedBuildingService.getRainSurface();

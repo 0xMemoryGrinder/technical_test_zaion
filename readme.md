@@ -50,6 +50,15 @@ docker-compose up
 docker-compose -f docker-compose.dev.yml up
 ```
 
+## Examples
+### Unoptimized
+Tested with subject sample data :
+![unoptimized](docs/app/unoptimizedExample.png)
+
+### Optimized
+Tested with subject sample data :
+![optimized](docs/app/optimizedExample.png)
+
 ## Extending the app
 See how to [extend the app](docs/app/extend.md) to add new endpoint to the API.
 
