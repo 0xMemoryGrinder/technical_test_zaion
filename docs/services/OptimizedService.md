@@ -123,3 +123,13 @@ The service sums up the results of all treated rows and returns it.
 ## Complexity
 
 The base complexity of this algorithm is `O(np)` where `n` is the number of elements in the list and `p` the maximum height since it go through the matrix only one time.
+
+## Benchmark
+The benchmark is done on a list of 10000 elements with a maximum height of 1000. The optimized service takes  on average 0.0007 seconds to compute the result, while the unoptimized service takes on average 0.0020 seconds.   
+The optimized service is 2.8 times faster than the unoptimized service.  
+The benchmark is done on an Asus Zenbook duo with an Intel Core i7-10510U CPU @ 4.90GHz and 16GB of RAM.
+
+### Unoptimized results 
+![benchamrkUnoptmized](unoptimizedBenchmark.png)
+### Optimized results
+![benchamrkOptmized](optimizedBenchmark.png)
